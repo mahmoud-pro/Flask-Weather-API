@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-app = Flask("Weather")
+app = Flask(__name__)
 
 
 @app.route("/")
@@ -13,4 +13,16 @@ def services():
     return render_template("services.html")
 
 
-app.run(debug=True)
+@app.route("/blogs/")
+def blogs():
+    return render_template("blogs.html")
+
+
+@app.route("/api/v1/<station>/<date>")
+def data(station, date):
+    temperature = 50
+    return {"station": station, "date": date, "temperature": temperature}
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)

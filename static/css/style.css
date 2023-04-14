@@ -78,3 +78,12 @@ header form input[type='text'] {
     flex-basis: 100%;
   }
 }
+
+.container h1{
+   font-size:4rem;
+}
+
+.container p{
+   font-size:1.5rem;
+   font-weight: bold;
+}
